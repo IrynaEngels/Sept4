@@ -11,7 +11,7 @@ import android.util.Log;
 @Deprecated
 public class Plus extends AppCompatTextView {
 
-    private static final String TAG = "TextViewPlus";
+    private static final String TAG = "Plus";
 
     public Plus(Context context) {super(context);}
 
@@ -29,7 +29,7 @@ public class Plus extends AppCompatTextView {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TextViewPlus);
 
-        String customFont = a.getString(R.styleable.TextViewPlus_font);
+        String customFont = a.getString(R.styleable.TextViewPlus_customFont);
 
         setFont(context, customFont);
 
@@ -43,7 +43,7 @@ public class Plus extends AppCompatTextView {
 
         try {
 
-            typeface.createFromAsset(context.getAssets(), asset);
+            typeface = Typeface.createFromAsset(context.getAssets(), asset);
 
         } catch (Exception e) {
 
